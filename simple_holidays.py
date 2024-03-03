@@ -2,6 +2,10 @@
 
 # Checking to see if one of the 5 cities are picked
 def city_flight_checker(x):
+    ''' 
+    Checks if the entered option is within the options.
+    Asks the user again if not within options.
+    '''
     while x < 1 or x > 5:
         print("Sorry, this is not one of the options.")
         x = int(input("Please enter the number of the city you would like to visit: "))
@@ -16,6 +20,9 @@ num_nights_variable = int(input("Please enter the number of nights you would lik
 rental_days_variable = int(input("Please enter the number of days you would like to rent a car: "))
 
 def hotel_cost(city_flight, num_nights):     # Would be less confusing to read if using different argument name to variable
+    '''
+    Multiplies the hotel cost per night with the amount of nights entered.
+    '''
 # The cost of the hotel per night is dependant on the city chosen
     if city_flight == 1:
         cost_per_night = 115
@@ -30,6 +37,9 @@ def hotel_cost(city_flight, num_nights):     # Would be less confusing to read i
     return cost_per_night * num_nights
 
 def plane_cost(city_flight):
+    '''
+    Returns the cost of the plane dependant on the chosen city.
+    '''
 # The cost of the plane is dependant on the city chosen
     if city_flight == 1:
         plane_cost = 120
@@ -44,6 +54,9 @@ def plane_cost(city_flight):
     return plane_cost
 
 def car_rental(city_flight, rental_days):
+    '''
+    Multiplies the car cost per per day with the amount of days entered.
+    '''
 # The cost of the car rental is dependant on the city chosen
     if city_flight == 1:
         car_cost = 122
@@ -58,6 +71,9 @@ def car_rental(city_flight, rental_days):
     return rental_days * car_cost
 
 def holiday_cost(num_nights, city_flight, rental_days):     # Mistake in task asking us to have functions as arguments
+    '''
+    Adds the cost of everything for the holiday.
+    '''
     total_hotel = hotel_cost(city_flight, num_nights)
     total_plane = plane_cost(city_flight)
     total_car = car_rental(city_flight, rental_days)
