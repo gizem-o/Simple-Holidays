@@ -2,8 +2,10 @@
 
 # Checking to see if one of the 5 cities are picked
 def city_flight_checker(x):
-    if x < 1 or x > 5:
+    while x < 1 or x > 5:
         print("Sorry, this is not one of the options.")
+        x = int(input("Please enter the number of the city you would like to visit: "))
+    return x 
 
 print("City options:\n1. Paris\n2. Rome\n3. Madrid\n4. Amsterdam\n5. Athens")
 city_flight_variable = int(input("Please enter the number of the city you would like to visit: "))
